@@ -18,7 +18,7 @@ const SearchBar = (props) => {
     return (
         
         <div className="hero">
-            <img src={Logo} alt="Logo"/>
+            <img src={Logo} alt="Logo" id="logo"/>
             <form className="searchBar" onSubmit={handleSubmit}>
                 <input type="text" placeholder="Search..." id="input" onChange={handleChange}/>
                 {/* <button type="submit">Search</button> */}

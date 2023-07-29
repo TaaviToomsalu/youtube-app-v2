@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import SearchBar from "./components/SearchBar";
 import youtube from './api/youtube'
-import VideoDetail from "./components/VideoDetail";
+
+import { SearchBar, VideoDetail, VideoList } from './components/';
 
 
 const App = () => {
@@ -37,10 +37,21 @@ const App = () => {
 
 
     return (
-        <>
-            <SearchBar />
-            <VideoDetail video={selectedVideo}/>
-        </>
+        <div>
+            <SearchBar onFormSubmit={handleSubmit}/>
+
+
+            <div className="body">
+                <div className="video-detail">
+                    <VideoDetail video={selectedVideo}/>
+                </div>
+                <div className="video-list">
+                    <VideoList videos={videos} onVideoSelect={onVideoSelect}/>
+                </div>
+            </div>
+            
+
+        </div>
     )
 }
 
