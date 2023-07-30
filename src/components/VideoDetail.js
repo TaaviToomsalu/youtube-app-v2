@@ -13,9 +13,9 @@ const VideoDetail = ({ video }) => {
                 <iframe title='Video Player' src={videoSrc}/>       
             </div>
 
-            <h4>{video.snippet.title} - {video.snippet.channelTitle}</h4>
-            <p>{video.snippet.channelTitle}</p>
-            <p>{video.snippet.description}</p>
+            <h3 id='title'>{video.snippet.title} - {video.snippet.channelTitle}</h3>
+            <h4 id='channelTitle'>{video.snippet.channelTitle}</h4>
+            <p id='description'>{video.snippet.description}</p>
         </div>
     )
 }

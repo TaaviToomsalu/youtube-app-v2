@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
 * {
     margin: 0;
     box-sizing: border-box; /* Optional: Set box-sizing for consistent sizing */
@@ -24,7 +27,6 @@
 }
 
 #logo {
-    width: 90px;
     height: 50px;
     padding-right: 2vw;
 }
@@ -49,17 +51,22 @@
 .body {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 20px;
+    justify-content: center;
 }
 
 .video-detail {
     flex: 2;
-    padding: 10px;
+    max-width: calc(100% - 402px);
+    margin: 0 0 0 24px;
+    padding: 24px 24px 0 0;
+    box-sizing: border-box;
 }
 
 .video-list {
     flex: 1;
-    padding: 10px;
+    max-width: 402px;
+    padding: 24px 24px 0 0;
+    box-sizing: border-box;
 }
 
 
@@ -82,22 +89,41 @@
     border: none;
 }
 
+#title {
+    margin: 10px 0 5px 0;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+}
+
+#channelTitle {
+    margin-bottom: 5px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+}
+
+#description {
+    font-family: "Roboto","Arial",sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
 
 /* Video list */
 .video-item {
     display: flex;
     align-items: center;
-    padding: 10px;
-    border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 10px;
+    max-width: 100%;
+    
 }
 
 .video-thumbnail {
-    flex: 0 0 120px; /* Thumbnail size */
     width: 168px;
     height: 94px;
     margin-right: 10px;
+    border-radius: 8px;
 }
 
 .video-info {
@@ -106,8 +132,41 @@
 
 .video-title {
     margin: 0;
-    font-weight: bold;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 510;
 }
 
 
 
+@media (max-width: 1000px) {
+    .body {
+      flex-direction: column; /* Stack the iframe and video-list vertically */
+    }
+  
+    .video-detail {
+      max-width: 100%; /* Allow the video-container to take the full width when stacked */
+      max-height: 100%;
+      overflow: hidden
+    }
+  
+    .video-list {
+      max-width: 100%; /* Allow the video-list to take the full width when stacked */
+      margin-left: 24px;
+      max-width: 100%;
+    }
+}
+
+
+@media (min-width: 1750px) {
+    .video-detail {
+        max-width: 1348px; /* Set max-width to 1348px to stop growing at 1750px (1750px - 402px) */
+      }
+    
+      body {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1750px;
+      }
+}
